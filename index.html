@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Albert Musungu | Portfolio</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Segoe UI', sans-serif; background: #f4f6f8; color: #333; line-height: 1.6; scroll-behavior: smooth;}
+
+    /* Navbar */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(44, 62, 80, 1);
+      display: flex; justify-content: center;
+      padding: 15px 0; z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    nav.shrink {padding: 8px 0; background: rgba(44, 62, 80, 0.9);}
+    nav ul {display: flex; list-style: none; flex-wrap: wrap;}
+    nav ul li {margin: 0 15px;}
+    nav ul li a {
+      color: white; text-decoration: none; font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav ul li a.active {border-bottom: 2px solid #3498db;}
+    nav ul li a:hover {color: #3498db;}
+
+    /* Mobile nav toggle */
+    .menu-toggle {
+      display: none; position: absolute; right: 20px; top: 15px;
+      background: none; border: none; color: white; font-size: 24px; cursor: pointer;
+    }
+    @media (max-width: 700px) {
+      nav ul {flex-direction: column; display: none; background: #2c3e50; width: 100%; text-align: center;}
+      nav ul.show {display: flex;}
+      .menu-toggle {display: block;}
+    }
+
+    /* Header */
+    header {
+      text-align: center; padding: 100px 20px 50px;
+      background: linear-gradient(135deg, #2c3e50, #34495e); color: white;
+    }
+    header img {
+      width: 120px; height: 120px; border-radius: 50%;
+      border: 4px solid white; margin-bottom: 15px;
+    }
+    header h1 {font-size: 2.5rem; margin-bottom: 5px;}
+    header p {opacity: 0.9;}
+
+    section {padding: 60px 20px; max-width: 1000px; margin: auto;}
+    h2 {color: #2c3e50; margin-bottom: 15px; text-align: center; border-bottom: 2px solid #ddd; padding-bottom: 5px;}
+
+    ul.skills {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; list-style: none;
+    }
+    ul.skills li {
+      background: white; padding: 12px; border-radius: 6px; text-align: center;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .portfolio {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;
+    }
+    .portfolio div {
+      background: white; padding: 15px; border-radius: 6px;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+      transition: 0.3s ease;
+    }
+    .portfolio div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    }
+    .portfolio img {width: 100%; border-radius: 6px; margin-bottom: 10px;}
+
+    /* Contact Form */
+    form {
+      display: flex; flex-direction: column; gap: 10px; max-width: 500px; margin: auto;
+    }
+    form input, form textarea {
+      padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;
+    }
+    form button {
+      padding: 10px; background: #3498db; color: white;
+      border: none; border-radius: 4px; cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form button:hover {background: #2980b9;}
+    #form-status {text-align: center; margin-top: 10px; font-weight: bold;}
+
+    /* Back to Top */
+    #backToTop {
+      position: fixed; bottom: 20px; right: 20px; background: #3498db;
+      color: white; border: none; padding: 10px 15px; border-radius: 50%;
+      cursor: pointer; display: none; font-size: 18px;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {box-shadow: 0 0 0 0 rgba(52,152,219, 0.7);}
+      70% {box-shadow: 0 0 0 15px rgba(52,152,219, 0);}
+      100% {box-shadow: 0 0 0 0 rgba(52,152,219, 0);}
+    }
+
+    footer {background: #2c3e50; color: white; text-align: center; padding: 15px; font-size: 0.9rem;}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <button class="menu-toggle">☰</button>
+    <ul>
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <img src="images/Albert-78.webp" alt="Portrait of Albert Musungu" loading="lazy">
+    <h1>Albert Musungu</h1>
+    <p>Theologian | Writer | Tech Learner | Humorist</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a passionate theologian and storyteller, blending ministry with creativity. Skilled in HTML, CSS, JavaScript, and PHP, I use technology to spread the gospel and create engaging content for both online and offline audiences.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>Preaching & Teaching</li>
+      <li>HTML, CSS, JavaScript, PHP</li>
+      <li>Creative Writing & Humor</li>
+      <li>Event Coordination</li>
+      <li>Community Engagement</li>
+    </ul>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio">
+      <div>
+        <img src="images/project1.webp" alt="Grace-Life Chronicles project" loading="lazy">
+        <h3><a href="#Grace-Life">Grace-Life Chronicles</a></h3>
+        <p>Humorous storytelling series blending ministry and everyday life.</p>
+      </div>
+      <div>
+        <img src="images/project2.webp" alt="Musungu Messages website" loading="lazy">
+        <h3><a href="Musungu-messages">Musungu Messages</a></h3>
+        <p>Faith-based website sharing messages and biblical insights.</p>
+      </div>
+      <div>
+        <img src="tech-ministry.jpg" alt="Tech Ministry Training workshop" loading="lazy">
+        <h3><a href="Tech-class">Tech Ministry Training</a></h3>
+        <p>Workshops helping church leaders use technology effectively.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form id="contactForm" action="https://formspree.io/f/xyzabcde" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="form-status"></div>
+  </section>
+
+  <button id="backToTop" title="Back to Top">↑</button>
+
+  <footer>
+    <p>© 2025 Albert Musungu. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const nav = document.querySelector("nav");
+    const navLinks = document.querySelectorAll("nav ul li a");
+    const sections = document.querySelectorAll("section");
+    const backToTop = document.getElementById("backToTop");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector("nav ul");
+
+    // Mobile menu toggle
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+
+    // Navbar shrink, active link highlight & back to top visibility
+    window.addEventListener("scroll", () => {
+      const scrollPos = window.scrollY;
+      nav.classList.toggle("shrink", scrollPos > 50);
+
+      let current = "";
+      sections.forEach(sec => {
+        if (scrollPos >= sec.offsetTop - 100) current = sec.getAttribute("id");
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+      });
+
+      backToTop.style.display = scrollPos > 300 ? "block" : "none";
+    });
+
+    // Back to top
+    backToTop.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+
+    // Contact form
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {method: "POST", body: data, headers: {'Accept': 'application/json'}});
+        if (res.ok) {
+          status.innerHTML = "Message sent successfully!";
+          status.style.color = "green";
+          form.reset();
+        } else {
+          status.innerHTML = "Oops! There was a problem.";
+          status.style.color = "red";
+        }
+      } catch (err) {
+        status.innerHTML = "Network error.";
+        status.style.color = "red";
+      }
+    });
+  </script>
+
+</body>
+</html>
